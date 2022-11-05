@@ -9,19 +9,22 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
       integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+      referrerpolicy="no-referrer"/>
+    
     <title>Bootstrap demo</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"/>
+
+      
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </head>
   <body>
 
@@ -34,11 +37,13 @@
                 <div class="div-logo list-container d-flex justify-content-between  ">
                     <img src="./src/logo.svg" alt="">
                     <ul class="list-group list-group-horizontal gap-3">
-                        <li class="list-group"><a class="text-light  text-decoration-none" href="">About</a></li>
+                        <li class="list-group"><a class="text-light  text-decoration-none"href="">About</a></li>
                         <li class="list-group"><a class="text-light text-decoration-none" href="">Careers</a></li>
                         <li class="list-group"><a class="text-light text-decoration-none" href="">Events</a></li>
                         <li class="list-group"><a class="text-light text-decoration-none" href="">Products</a></li>
                         <li class="list-group"><a class="text-light text-decoration-none" href="">Support</a></li>
+                        <li class="list-group"><a class="text-light text-decoration-none" href="#" id="ejercicios">Ejercicios</a></li>
+                        <li class="list-group"><a class="text-light text-decoration-none" href="#" data-toggle="modal" data-target="#exampleModal" id="btn-login">Login</a></li>
                     </ul>
                 </div>
 
@@ -130,6 +135,37 @@
       </div>
     </section>
 
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+      </button> -->
+      
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">LOGIN</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body ">
+               <form id="formingresar" class="p-3 ">
+                <input id="inputuser" type="text" class="form-control" placeholder="Usuario" required name="inputuser">
+                <input id="inputpassword" name="inputpassword" type="password" class="form-control mt-2" placeholder="Ingrese contraseña" required>
+                <div>
+                    <button id="btn-ingresar" class="btn btn-primary mt-4 ">Ingresar</button>
+                </div>
+               
+               </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
     <footer class="footer">
       <div class="row">
         <div class="col-md-6">
@@ -159,7 +195,7 @@
 
       </div>
     </footer>
-
+    <script src="./haka.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
