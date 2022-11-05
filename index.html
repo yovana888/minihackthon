@@ -42,7 +42,8 @@
                         <li class="list-group"><a class="text-light text-decoration-none" href="">Events</a></li>
                         <li class="list-group"><a class="text-light text-decoration-none" href="">Products</a></li>
                         <li class="list-group"><a class="text-light text-decoration-none" href="">Support</a></li>
-                        <li class="list-group"><a class="text-light text-decoration-none" href="#" data-toggle="modal" data-target="#exampleModal">Login</a></li>
+                        <li class="list-group"><a class="text-light text-decoration-none" href="#" id="ejercicios">Ejercicios</a></li>
+                        <li class="list-group"><a class="text-light text-decoration-none" href="#" data-toggle="modal" data-target="#exampleModal" id="btn-login">Login</a></li>
                     </ul>
                 </div>
 
@@ -149,9 +150,9 @@
               </button>
             </div>
             <div class="modal-body ">
-               <form id="form-ingresar" action="" class="p-3 ">
-                <input id="inputuser" type="text" class="form-control" placeholder="Usuario" required>
-                <input id="inputpassword" type="password" class="form-control mt-2" placeholder="Ingrese contraseña" required>
+               <form id="formingresar" class="p-3 ">
+                <input id="inputuser" type="text" class="form-control" placeholder="Usuario" required name="inputuser">
+                <input id="inputpassword" name="inputpassword" type="password" class="form-control mt-2" placeholder="Ingrese contraseña" required>
                 <div>
                     <button id="btn-ingresar" class="btn btn-primary mt-4 ">Ingresar</button>
                 </div>
