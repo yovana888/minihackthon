@@ -44,3 +44,46 @@ footer a {
 .right{
     text-align: right;
 }
+
+.div-logo{
+    padding: 30px 100px ;
+    
+}
+
+
+.title{
+    margin-left: 100px;
+    padding: 30px 60px;
+    margin-top: 80px;
+
+    
+}
+
+ .title h1{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 4rem;
+ }
+
+
+ .portafolio{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: relative;
+ }
+
+
+ .container-texto{
+    padding: 100px;
+   
+    width: 40%;
+    position: absolute;
+    z-index: 2;
+    background: white;
+    margin-top: -300px;
+    margin-left: 40%;
+ }
+
+ .our{
+    margin-top: 170px;
+ }
