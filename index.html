@@ -5,8 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>      
+    <link rel="stylesheet" href="./haka.css">
+
 </head>
-<body>
-    <h3>prueba</h3>
+<body class="justify-content">
+
+    <div class="col-md-6 col-sm-12 ">
+        <button id="myBtn" class="btn btn-success mb-5">mi primer boton </button>
+    </div>
+
+<!-- The Modal -->
+    <div id="myModal"   class="modal"  > 
+    <!-- Modal content -->
+      <div class="modal-content col-md-4 " >
+        <div class="m-h">
+          <h5 class="modal-title m-2" id="exampleModalLabel">Venalio</h5>
+          <span class="close float-right">&times;</span>
+        </div>
+      <form action="">
+        <div  class="form-group has-feedback">
+           <i class="fa fa-user form-control-feedback"></i>
+           <input type="text" class="form-control" placeholder="USERNAME">
+        </div>
+        <div  class="form-group has-feedback">
+           <i class="fa fa-lock form-control-feedback"></i>
+           <input type="text" class="form-control" placeholder="PASSWORD">
+        </div>
+     
+       </form>
+         
+      <input type="submit" value="Login" id="cerrar" class="btn btn-success m-2" style="background-color:red"  >
+      <div class="d-flex"><h5>PASSWORD</h5> <span>|</span> <h5>REGISTER</h5></div>
+      </div>
+    </div>
+
+    <script src="./main.js" ></script>
 </body>
 </html>

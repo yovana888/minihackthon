@@ -1,0 +1,35 @@
+
+  
+
+/* Modal */
+
+.modal{
+    display: flex;
+    justify-content: center;
+    width: 400px;
+
+}
+
+.modal-content{
+    display: flex;
+    justify-content: center;
+    border: 0;
+    padding: 5%;
+    background: rgb(12,19,15);
+    background: linear-gradient(45deg, rgba(12,19,15,1) 0%, rgba(20,32,62,1) 28%, rgba(7,161,176,1) 100%);
+}
+
+
+.form-control-feedback {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+  }
+  
+  .form-control {
+    padding-left: 30px!important;
+    padding-inline:2rem;
+    margin-bottom: 5%;
+  }
+
+
