@@ -1,9 +1,26 @@
-const btnIngresar = document.getElementById('btn-ingresar');
-const formIngresar = document.getElementById('formingresar');
-const usuario = document.getElementById("inputuser");
-const password = document.getElementById("inputpassword");
-const btnLogin = document.getElementById("btn-login");
+const btnIngresar = document.getElementById("btn_ingresar");
+const btnRegistro = document.getElementById("btn_registro");
+const btnIngresar2 = document.getElementById("btn_ingresar_2");
+const btnRegistro2 = document.getElementById("btn_registro_2");
+
+const titleModal = document.getElementById("loginModalLabel");
+
+const formIngresar = document.getElementById("form_ingresar");
+const formRegistrar = document.getElementById("form_registro");
+/**Para Login */
+const usuario = document.getElementById("input_user");
+const password = document.getElementById("input_password");
+
+/**Para Registro */
+const usuario2 = document.getElementById("input_user_2");
+const password2 = document.getElementById("input_password_2");
+
+const btnLogin = document.getElementById("btn_login");
 const btnEjercicios = document.getElementById("ejercicios");
+const modalLogin = document.getElementById("loginModal");
+const btnClose = document.getElementById("btn_close");
+const btnLogout= document.getElementById("btn_logout");
+
 const user = {
     username: 'admin',
     password: 'admin123',
@@ -110,19 +127,68 @@ const readMenu = () => {
     }
 }
 
+const showFormRegistro = () => {
+    formIngresar.style.display="none";
+    formRegistrar.style.display="block";
+    titleModal.textContent="REGISTRO";
+}
+
+
+const hideFormRegistro = () => {
+    formIngresar.style.display="block";
+    formRegistrar.style.display="none";
+    titleModal.textContent="LOGIN";
+}
+
+const showBtnLogout=(name) =>{
+    btnLogin.style.display="none";
+    btnLogout.innerHTML =  `<a class="nav-link text-white" href="#" id="btn_login">${name} <i class="bi bi-box-arrow-right text-white ml-3"></a>`;
+    btnLogout.style.display="block";
+}
+
+
 const init = () => {
     formIngresar.addEventListener('submit', (e) => {
         e.preventDefault();
-        if (usuario.value == user.username && password.value == user.password) {
-            btnLogin.textContent = user.username;
+        const dataLogin=JSON.parse(localStorage.getItem('dataLogin'))
+        if (usuario.value == dataLogin.name && password.value == dataLogin.password) {
+            showBtnLogout(dataLogin.name);
+            formIngresar.reset();
+            btnClose.click();
         } else {
             alert('credenciales incorrectas');
         }
     })
 
+    formRegistrar.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const dataUser = {
+            name:usuario2.value,
+            password:password2.value
+        }
+        showBtnLogout(usuario2.value);
+        btnClose.click();
+        formRegistrar.reset();
+        localStorage.setItem('dataLogin',JSON.stringify(dataUser));
+    })
+
     btnEjercicios.addEventListener("click", function () {
         readMenu();
     });
+
+    btnRegistro.addEventListener("click", function () {
+        showFormRegistro();
+    });
+
+    btnIngresar2.addEventListener("click", function () {
+        hideFormRegistro();
+    });
+
+    btnLogout.addEventListener("click", function () {
+        btnLogout.style.display="none";
+        btnLogin.style.display="block";
+    });
+
 }
 
 document.addEventListener("DOMContentLoaded", init());
