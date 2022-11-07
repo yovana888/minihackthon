@@ -1,31 +1,28 @@
-const btnIngresar = document.getElementById("btn_ingresar");
-const btnRegistro = document.getElementById("btn_registro");
-const btnIngresar2 = document.getElementById("btn_ingresar_2");
-const btnRegistro2 = document.getElementById("btn_registro_2");
-
 const titleModal = document.getElementById("loginModalLabel");
-
-const formIngresar = document.getElementById("form_ingresar");
-const formRegistrar = document.getElementById("form_registro");
-/**Para Login */
-const usuario = document.getElementById("input_user");
-const password = document.getElementById("input_password");
-
-/**Para Registro */
-const usuario2 = document.getElementById("input_user_2");
-const password2 = document.getElementById("input_password_2");
-
+const modalLogin = document.getElementById("loginModal");
 const btnLogin = document.getElementById("btn_login");
 const btnEjercicios = document.getElementById("ejercicios");
-const modalLogin = document.getElementById("loginModal");
 const btnClose = document.getElementById("btn_close");
 const btnLogout= document.getElementById("btn_logout");
 
-const user = {
-    username: 'admin',
-    password: 'admin123',
+/**********************Constantes Para Login *******************************/
 
-}
+const formIngresar = document.getElementById("form_ingresar");
+const usuario = document.getElementById("input_user");
+const password = document.getElementById("input_password");
+const btnIngresar = document.getElementById("btn_ingresar");
+const btnRegistro = document.getElementById("btn_registro");
+
+/**********************Constantes Para Registro *******************************/
+
+const usuario2 = document.getElementById("input_user_2");
+const password2 = document.getElementById("input_password_2");
+const formRegistrar = document.getElementById("form_registro");
+const btnIngresar2 = document.getElementById("btn_ingresar_2");
+const btnRegistro2 = document.getElementById("btn_registro_2");
+
+
+/********************** Funciones de los Ejercicios de JS *******************************/
 
 const getYearBisiesto = () => {
     const year = Number(prompt('Ingrese el Año'));
@@ -108,6 +105,7 @@ const calcPrice = () => {
     }
 }
 
+/********************** Menu Ejercicios de JS *******************************/
 
 const readMenu = () => {
     const option = prompt('Ingrese el numero de la opcion:  \r\n 1.Año Bisiesto. \r\n 2.Calculadora  \r\n 3.Calcular Precio Total \r\n');
@@ -126,6 +124,8 @@ const readMenu = () => {
             break;
     }
 }
+
+/********************** Funciones para el Login y Registro *******************************/
 
 const showFormRegistro = () => {
     formIngresar.style.display="none";
@@ -146,6 +146,8 @@ const showBtnLogout=(name) =>{
     btnLogout.style.display="block";
 }
 
+
+/********************** Funcion Init *******************************/
 
 const init = () => {
     formIngresar.addEventListener('submit', (e) => {
