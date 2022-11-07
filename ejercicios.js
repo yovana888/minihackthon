@@ -12,6 +12,7 @@ const usuario = document.getElementById("input_user");
 const password = document.getElementById("input_password");
 const btnIngresar = document.getElementById("btn_ingresar");
 const btnRegistro = document.getElementById("btn_registro");
+const dataLogin=JSON.parse(localStorage.getItem('dataLogin'))
 
 /**********************Constantes Para Registro *******************************/
 
@@ -146,19 +147,26 @@ const showBtnLogout=(name) =>{
     btnLogout.style.display="block";
 }
 
+const verifyLogin = () => {
+    if (usuario.value == dataLogin.name && password.value == dataLogin.password) {
+        showBtnLogout(dataLogin.name);
+        formIngresar.reset();
+        btnClose.click();
+    } else {
+        alert('credenciales incorrectas');
+    }
+}
+
 
 /********************** Funcion Init *******************************/
 
 const init = () => {
     formIngresar.addEventListener('submit', (e) => {
         e.preventDefault();
-        const dataLogin=JSON.parse(localStorage.getItem('dataLogin'))
-        if (usuario.value == dataLogin.name && password.value == dataLogin.password) {
-            showBtnLogout(dataLogin.name);
-            formIngresar.reset();
-            btnClose.click();
-        } else {
-            alert('credenciales incorrectas');
+        if(dataLogin){
+           verifyLogin();
+        }else{
+            alert('No se encuentra Registrado');
         }
     })
 
@@ -191,6 +199,12 @@ const init = () => {
         btnLogin.style.display="block";
     });
 
+    /***Si ya se encuentra registado se carga su nombre en el navbar** */
+
+    if(dataLogin){
+        showBtnLogout(dataLogin.name)
+    }
+        
 }
 
 document.addEventListener("DOMContentLoaded", init());
