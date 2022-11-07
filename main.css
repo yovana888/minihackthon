@@ -1,7 +1,6 @@
 :root {
-    --primary-color: #0a1118;
-    --primary-color-highlight: #233d54;
-    --bs-body-bg: #fbf0f6;
+    --white-color: #fff;
+    --dark-color: #000;
     --bs-body-font-family: "Montserrat", sans-serif;
 }
 
@@ -9,11 +8,15 @@ a {
     text-decoration: none;
 }
 
-.container-custom {
-    width: 100%;
-    padding: 0 1rem;
-    margin: 0 auto;
+
+h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
 }
+
+
+/********************** Clases para Banner *******************************/
 
 .container-fluid {
     padding: 50px 70px;
@@ -27,13 +30,6 @@ a {
     z-index: 2;
 }
 
-h1 {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-    font-size: 3rem;
-}
-
-
 .hero {
     position: relative;
     height: 100vh;
@@ -46,19 +42,21 @@ h1 {
 }
 
 .hero__content-width {
-    border: 1px solid white;
+    border: 1px solid var( --white-color);
     max-width: 540px;
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 240px;
+    margin-top: 20%;
     padding: 25px;
     animation-name: texto-volador;
     animation-duration: 3s;
     animation-iteration-count: 1;
 }
 
+/********************** Clases para Footer *******************************/
+
 .footer {
-    background: black;
+    background: var( --dark-color);
 }
 
 .footer .container_footer {
@@ -67,6 +65,11 @@ h1 {
 
 .footer .border-highlight {
     border-top: 1px solid var(--primary-color-highlight);
+}
+
+.footer-social {
+    display: flex;
+    justify-content: end;
 }
 
 .row-footer {
@@ -78,50 +81,17 @@ h1 {
     text-align: end;
 }
 
-.btn-all {
-    margin-top: 30px;
-    display: none;
-}
-
-.footer-social {
-    display: flex;
-    justify-content: end;
-}
-
-.footer-logo {
-    display: flex;
-}
+/********************** Clases para leader interactive *******************************/
 
 #container-leader,
 #cards-container {
     padding: 20px 70px;
 }
 
-.div-img {
-    position: relative;
-}
-
-.name-image {
-    position: absolute;
-    font-size: 2.3rem;
-    margin-left: 30px;
-    bottom: 1rem;
-    color: white;
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 300;
-}
-
 .container-img-leader {
     display: flex;
     flex-direction: row;
-}
-#cards-container img{
-   transition: 0.5s;
-}
-#cards-container img:hover{
-    transform: scale(1.05);
-    border-radius: 5px;
-    cursor: pointer;
+    margin-top: 60px;
 }
 
 .container-img-leader img {
@@ -132,27 +102,58 @@ h1 {
     padding: 60px;
     width: 70%;
     margin-left: -160px;
-    background: white;
+    background: var( --white-color);
     height: 350px;
     margin-top: 150px;
 }
+
+/********************** Clases para cards *******************************/
+
+#cards-container img{
+    transition: 0.5s;
+ }
+ #cards-container img:hover{
+     transform: scale(1.05);
+     border-radius: 5px;
+     cursor: pointer;
+ }
+
+.name-image {
+    position: absolute;
+    font-size: 2.3rem;
+    margin-left: 30px;
+    bottom: 1rem;
+    color: var( --white-color);
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+}
+
+.btn-all {
+    margin-top: 30px;
+    display: none;
+}
+
+/********************** Clases para Registro *******************************/
 
 #form_registro,.btn_logout{
     display: none;
 }
 
-@media (max-width: 580px) {
+/********************** Medias *******************************/
+
+@media (max-width: 675px) {
+    .h1{
+        font-size: 27px;
+    }
+    .container-fluid {
+        padding: 30px 20px;
+    }
+
     .hero {
         background: url("./src/mobile/image-hero.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-    }
-}
-
-@media (max-width: 675px) {
-    .container-fluid {
-        padding: 30px 20px;
     }
 
     .row-footer {
@@ -181,6 +182,10 @@ h1 {
         justify-content: center;
     }
 
+    .hero__content-width {
+        margin-top: 50%;
+    }
+
 }
 
 @media (max-width: 870px) {
@@ -205,6 +210,12 @@ h1 {
         width: 100%;
         margin-left: 0px;
         margin-top: 0px;
+        padding: 25px;
+        height: auto;
+    }
+
+    .container-img-leader section h1{
+        font-size: 20px;
     }
 }
 
@@ -214,23 +225,8 @@ h1 {
     }
 }
 
-@media (min-width: 1200px) {
-    .container-custom {
-        width: 1140px;
-    }
-}
 
-@media (min-width: 1400px) {
-    .container-custom {
-        width: 1340px;
-    }
-}
-
-@media (min-width: 1600px) {
-    .container-custom {
-        width: 1520px;
-    }
-}
+/********************** Key Frames *******************************/
 
 @keyframes texto-volador {
     from {
